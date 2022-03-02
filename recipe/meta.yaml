@@ -10,7 +10,7 @@ source:
   sha256: 60872eca558fcbf33162a176111c33e9a3fad21799ed998ea9145809670269cd
 
 build:
-  number: 1
+  number: 2
   skip: True  # [(py < 36) or win]
   script: "{{ PYTHON }} -m pip install . -vv"
 
@@ -31,7 +31,7 @@ requirements:
   run:
     # core
     - python
-    - mpi4py
+    - mpi4py >= 3.1
     - matplotlib-base
     - llvm-openmp  # [osx]
     - libgomp  # [linux]
