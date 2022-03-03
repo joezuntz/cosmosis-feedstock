@@ -45,7 +45,6 @@ requirements:
     - setuptools
     - threadpoolctl
     - git
-    - {{ mpi }}
     # for samplers
     - emcee
     - dynesty
