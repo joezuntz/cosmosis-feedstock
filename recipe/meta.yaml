@@ -20,6 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
+    - wheel
   host:
     - python
     - pip
