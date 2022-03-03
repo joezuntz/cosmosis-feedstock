@@ -22,12 +22,16 @@ requirements:
     - {{ compiler('cxx') }}
     - make
     - llvm-openmp  # [osx]
-    - libgomp      # [linux]    
+    - libgomp      # [linux]
   host:
     - python
     - pip
     - wheel
     - {{ mpi }}
+    # needed to force the right pinnings
+    # see https://github.com/conda-forge/conda-smithy/issues/1600
+    - mpich          # [mpi == "mpich"]
+    - openmpi        # [mpi == "openmpi"]
     - liblapack
     - libblas
     - minuit2_standalone
