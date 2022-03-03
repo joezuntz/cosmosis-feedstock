@@ -21,23 +21,21 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
     - make
-    - wheel
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]    
   host:
     - python
     - pip
+    - wheel
     - {{ mpi }}
     - liblapack
     - libblas
     - minuit2_standalone
-    - llvm-openmp  # [osx]
-    - libgomp  # [linux]
   run:
     # core
     - python
     - mpi4py
     - matplotlib-base
-    - llvm-openmp  # [osx]
-    - libgomp  # [linux]
     - future
     - numpy
     - pip
@@ -48,8 +46,6 @@ requirements:
     - threadpoolctl
     - git
     - {{ mpi }}
-    - libblas
-    - liblapack
     # for samplers
     - emcee
     - dynesty
