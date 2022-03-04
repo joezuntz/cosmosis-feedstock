@@ -1,5 +1,5 @@
 {% set name = "cosmosis" %}
-{% set version = "0.5.12" %}
+{% set version = "0.5.17" %}
 
 package:
   name: {{ name|lower }}
@@ -7,34 +7,39 @@ package:
 
 source:
   url:  https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a842406b525e2059b55ebb14c97390a21a08ce2f5c3007e71799da7067d42830
+  sha256: fe59a4a78bdcde1c3e1e9e590aa7e0184473ade1662d5c39ec2c566f4da91582
 
 build:
-  number: 1
+  number: 0
   skip: True  # [(py < 36) or win]
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script:   "{{ PYTHON }} -m pip install . -vv"
+
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
+    - make
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]
   host:
     - python
     - pip
+    - wheel
     - {{ mpi }}
+    # needed to force the right pinnings
+    # see https://github.com/conda-forge/conda-smithy/issues/1600
+    - mpich          # [mpi == "mpich"]
+    - openmpi        # [mpi == "openmpi"]
     - liblapack
     - libblas
     - minuit2_standalone
-    - llvm-openmp  # [osx]
-    - libgomp  # [linux]
   run:
     # core
     - python
     - mpi4py
     - matplotlib-base
-    - llvm-openmp  # [osx]
-    - libgomp  # [linux]
     - future
     - numpy
     - pip
@@ -44,9 +49,6 @@ requirements:
     - setuptools
     - threadpoolctl
     - git
-    - {{ mpi }}
-    - libblas
-    - liblapack
     # for samplers
     - emcee
     - dynesty
