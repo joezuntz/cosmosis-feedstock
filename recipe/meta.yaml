@@ -1,5 +1,5 @@
 {% set name = "cosmosis" %}
-{% set version = "2.0.6" %}
+{% set version = "2.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url:  https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c9092e5ec31abe31e8d9a4cd53e171d07cf27a6657e4e2d296f901a4939ed750
+  sha256: b78057a80a1017d8e98eb841961911030db9355fa1a5535ed0f7aa0e67c122f7
 
 build:
   number: 0
