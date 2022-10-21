@@ -25,10 +25,11 @@ llvm_openmp:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 mpi:
-- openmpi
+- mpich
 mpich:
 - '4'
 openmpi:
+- '3'
 - '4'
 pin_run_as_build:
   python:

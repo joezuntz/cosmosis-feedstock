@@ -25,8 +25,9 @@ liblapack:
 mpi:
 - openmpi
 mpich:
-- '4'
+- '3'
 openmpi:
+- '3'
 - '4'
 pin_run_as_build:
   python:
