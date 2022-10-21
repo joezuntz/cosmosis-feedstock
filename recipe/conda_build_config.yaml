@@ -1,3 +1,9 @@
 mpi:
   - mpich
   - openmpi
+mpich:
+  - '3'
+  - '4'
+openmpi:
+  - '3'
+  - '4'
