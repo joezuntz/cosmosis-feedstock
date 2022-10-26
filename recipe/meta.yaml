@@ -30,8 +30,9 @@ requirements:
     - {{ mpi }}
     # needed to force the right pinnings
     # see https://github.com/conda-forge/conda-smithy/issues/1600
-    - mpich          # [mpi == "mpich"]
-    - openmpi        # [mpi == "openmpi"]
+    - mpich==3.*          # [mpi == "mpich==3.*"]
+    - mpich==4.*          # [mpi == "mpich==4.*"]
+    - openmpi             # [mpi == "openmpi"]
     - liblapack
     - libblas
     - minuit2_standalone

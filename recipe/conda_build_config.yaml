@@ -1,6 +1,4 @@
 mpi:
-  - mpich
+  - mpich==3.*
+  - mpich==4.*
   - openmpi
-mpich:
-  - '3'
-  - '4'
