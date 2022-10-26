@@ -25,7 +25,6 @@ liblapack:
 mpi:
 - openmpi
 mpich:
-- '3'
 - '4'
 openmpi:
 - '4'
