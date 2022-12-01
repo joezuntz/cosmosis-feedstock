@@ -10,7 +10,7 @@ source:
   sha256: f814643eeca331a4b23facc84d4cbbaff2759b4018e59a6e4db2cac845933837
 
 build:
-  number: 0
+  number: 1
   skip: true  # [( (py < 36) or win or ((build_platform != target_platform) and mpi == "openmpi") )]
   script: {{ PYTHON }} -m pip install . -vv
 
