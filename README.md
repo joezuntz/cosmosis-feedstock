@@ -1,11 +1,11 @@
-About cosmosis
-==============
+About cosmosis-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cosmosis-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/joezuntz/cosmosis
 
 Package license: BSD-2-Clause AND LicenseRef-non-commerical-use-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cosmosis-feedstock/blob/main/LICENSE.txt)
 
 Summary: The Cosmological Survey Inference System
 
