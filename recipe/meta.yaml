@@ -58,7 +58,7 @@ requirements:
     - minuit2_standalone
     - zeus-mcmc
     - dulwich
-    - nautilus-sampler
+    - nautilus-sampler>=0.6
 
 test:
   imports:
