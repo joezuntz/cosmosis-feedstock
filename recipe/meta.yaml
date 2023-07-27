@@ -1,5 +1,5 @@
 {% set name = "cosmosis" %}
-{% set version = "2.5.1" %}
+{% set version = "3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ef4eb51563eb49b3a6319f70ef29635229f150b48196e093d00d3907f6123679
+  sha256: 1b0963144863a82b082a66d34b2c8c8294a19fb41c2f07d009c6883e8900bfb4
 
 build:
   number: 0
@@ -58,7 +58,8 @@ requirements:
     - minuit2_standalone
     - zeus-mcmc
     - dulwich
-    - nautilus-sampler >=0.6
+    - nautilus-sampler =0.6
+    - astropy
 
 test:
   imports:
