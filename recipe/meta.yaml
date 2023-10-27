@@ -11,7 +11,7 @@ source:
 
 build:
   number: 1
-  skip: true  # [( (py < 36) or win or ((build_platform != target_platform) and mpi == "openmpi") )]
+  skip: true  # [( (py < 36) or win )]
   script: {{ PYTHON }} -m pip install . -vv
 
 
