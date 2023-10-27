@@ -25,6 +25,8 @@ requirements:
     - make
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
+    # needed for cross-compilation
+    - {{ mpi }}                              # [build_platform != target_platform and mpi == "openmpi"]
   host:
     - python
     - pip
