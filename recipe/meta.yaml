@@ -12,7 +12,7 @@ source:
 build:
   number: 2
   skip: true  # [( (py < 36) or win )]
-  script: gfortran --version && echo && mpif90 --version && echo && mpif90 -show && echo && {{ PYTHON }} -m pip install . -vv
+  script: ${FC} --version && echo && mpif90 --version && echo && mpif90 -show && echo && {{ PYTHON }} -m pip install . -vv
 
 
 requirements:
