@@ -12,7 +12,8 @@ source:
 build:
   number: 2
   skip: true  # [( (py < 36) or win )]
-  script: export OMPI_FC=${FC} && which ${FC} && echo && which mpif90 && echo && ${FC} --version && echo && mpif90 --version && echo && mpif90 -show && echo && {{ PYTHON }} -m pip install . -vv
+  # OpenMPI fails to cross-compile to arm64 unless this variable is exported
+  script: export OMPI_FC=${FC} && {{ PYTHON }} -m pip install . -vv
 
 
 requirements:
