@@ -10,9 +10,10 @@ source:
   sha256: eda7ffc1c777b9594fe5c19c07b6f9c49293e967911dc0880fe71ad1f66d252c
 
 build:
-  number: 1
-  skip: true  # [( (py < 36) or win or ((build_platform != target_platform) and mpi == "openmpi") )]
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 2
+  skip: true  # [( (py < 36) or win )]
+  # OpenMPI fails to cross-compile to arm64 unless this variable is exported
+  script: export OMPI_FC=${FC} && {{ PYTHON }} -m pip install . -vv
 
 
 requirements:
@@ -25,6 +26,8 @@ requirements:
     - make
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
+    # needed for cross-compilation
+    - {{ mpi }}                              # [build_platform != target_platform and mpi == "openmpi"]
   host:
     - python
     - pip
