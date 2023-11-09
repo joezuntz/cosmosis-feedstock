@@ -1,5 +1,5 @@
 {% set name = "cosmosis" %}
-{% set version = "3.4" %}
+{% set version = "3.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: eda7ffc1c777b9594fe5c19c07b6f9c49293e967911dc0880fe71ad1f66d252c
+  sha256: bcd1f573c01b2ebc79a64b1a79859db92d3a265f7ca691b4ec54b9d5c1d8aa0d
 
 build:
-  number: 2
+  number: 0
   skip: true  # [( (py < 36) or win )]
   # OpenMPI fails to cross-compile to arm64 unless this variable is exported
   script: export OMPI_FC=${FC} && {{ PYTHON }} -m pip install . -vv
