@@ -10,7 +10,7 @@ source:
   sha256: 3c7389790a6f567caa971f3aa501eb6a58b786f6e2b49f1607b55f3c7759f79f
 
 build:
-  number: 0
+  number: 1
   skip: true  # [( (py < 36) or win )]
   # OpenMPI fails to cross-compile to arm64 unless this variable is exported
   script: export OMPI_FC=${FC} && {{ PYTHON }} -m pip install . -vv
@@ -21,6 +21,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('fortran') }}
     - {{ compiler('cxx') }}
     - make
