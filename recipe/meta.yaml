@@ -1,5 +1,5 @@
 {% set name = "cosmosis" %}
-{% set version = "3.5.1" %}
+{% set version = "3.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3c7389790a6f567caa971f3aa501eb6a58b786f6e2b49f1607b55f3c7759f79f
+  sha256: df767aadc4a72401d6bd6e91ef3be0fb4e1cd8e4fd7973b5ae46b6602a26694a
 
 build:
-  number: 1
-  skip: true  # [( (py < 36) or win )]
+  number: 0
+  # There is a problem with Linux OpenMPI that I would just like to skip for now
+  skip: true  # [( (py < 36) or win ) or ( (mpi == "openmpi") and linux )]
   # OpenMPI fails to cross-compile to arm64 unless this variable is exported
   script: export OMPI_FC=${FC} && {{ PYTHON }} -m pip install . -vv
 
@@ -73,6 +74,7 @@ test:
     - test -f ${SP_DIR}/cosmosis/samplers/multinest/multinest_src/libnest3_mpi.so
     - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord.so
     - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord_mpi.so
+    - mpirun -n 2 hostname
     - source cosmosis-configure && pytest --pyargs cosmosis
   requires:
     - pytest
