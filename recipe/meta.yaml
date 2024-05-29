@@ -63,7 +63,7 @@ requirements:
     - minuit2_standalone
     - zeus-mcmc
     - dulwich
-    - nautilus-sampler =0.6
+    - nautilus-sampler >=1.0.1
     - astropy
 
 test:
