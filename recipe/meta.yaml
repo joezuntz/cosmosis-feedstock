@@ -10,7 +10,7 @@ source:
   sha256: 9575ad08fec6e56832a1f5341cceca7f4d4d5a287f259189292ec31098ae1ae0
 
 build:
-  number: 0
+  number: 1
   # There is a problem with Linux OpenMPI that I would just like to skip for now
   skip: true  # [( (py < 36) or win ) or ( (mpi == "openmpi") and linux )]
   # OpenMPI fails to cross-compile to arm64 unless this variable is exported
@@ -53,7 +53,7 @@ requirements:
     - pip
     - pybind11
     - pyyaml
-    - scipy
+    - scipy <1.14
     - setuptools
     - threadpoolctl
     - git
