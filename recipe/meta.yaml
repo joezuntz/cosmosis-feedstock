@@ -53,7 +53,7 @@ requirements:
     - pip
     - pybind11
     - pyyaml
-    - scipy <0.14
+    - scipy <1.14
     - setuptools
     - threadpoolctl
     - git
