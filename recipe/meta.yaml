@@ -67,6 +67,7 @@ requirements:
     - dulwich
     - nautilus-sampler >=1.0.1
     - astropy
+    - getdist
 
 test:
   imports:
