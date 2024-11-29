@@ -2,3 +2,6 @@ mpi:
   - mpich ==3.*
   - mpich ==4.*
   - openmpi
+numpy:
+  - numpy ==1.*
+  - numpy ==2.*

@@ -49,13 +49,13 @@ requirements:
     - mpi4py
     - matplotlib-base
     - future
-    # TODO: update for 2.0
-    - numpy <2
+    - numpy ==1.*          # [numpy == "numpy ==1.*"]
+    - numpy ==2.*          # [numpy == "numpy ==2.*"]
     - pip
     - pybind11
     - pyyaml
     # CSL has updates for this but need to check
-    - scipy <1.14
+    - scipy
     - setuptools
     - threadpoolctl
     - git
