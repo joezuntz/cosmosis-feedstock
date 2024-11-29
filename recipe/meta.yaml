@@ -50,7 +50,7 @@ requirements:
     - mpi4py
     - matplotlib-base
     - future
-    - {{ numpy }}
+    - numpy
     - pip
     - pybind11
     - pyyaml
