@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 0b6c90599a35fd5b78bc4e37e6b9051fe77d7ffd78981386fba988dd5776cdd9
 
 build:
-  number: 0
+  number: 1
   # There is a problem with Linux OpenMPI that I would just like to skip for now
   skip: true  # [( (py < 36) or win ) or ( (mpi == "openmpi") and linux )]
   # OpenMPI fails to cross-compile to arm64 unless this variable is exported
@@ -43,19 +43,19 @@ requirements:
     - liblapack
     - libblas
     - minuit2_standalone
+    - setuptools
   run:
     # core
     - python
     - mpi4py
     - matplotlib-base
     - future
-    # TODO: update for 2.0
-    - numpy <2
+    - numpy
     - pip
     - pybind11
     - pyyaml
     # CSL has updates for this but need to check
-    - scipy <1.14
+    - scipy
     - setuptools
     - threadpoolctl
     - git
@@ -66,7 +66,7 @@ requirements:
     - zeus-mcmc
     - dulwich
     - nautilus-sampler >=1.0.1
-    - astropy
+    - astropy-base
     - getdist
     - pybobyqa
 
