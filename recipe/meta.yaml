@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   # There is a problem with Linux OpenMPI that I would just like to skip for now
-  skip: true  # [( (py < 36) or win ) or ( (mpi == "openmpi") and linux )]
+  skip: true  # [( (py < 36) or win )]
   # OpenMPI fails to cross-compile to arm64 unless this variable is exported
   script: export OMPI_FC=${FC} && {{ PYTHON }} -m pip install . -vv
 
